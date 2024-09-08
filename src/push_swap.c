@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 18:02:32 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:18:09 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ char	***split_args(char **av, int ac);
 
 int	main(int ac, char *av[])
 {
-    t_stack *a;
-    t_stack *b;
-    char    ***args;
+	t_stack	*a;
+	t_stack	*b;
+	char	***args;
 
-    a = NULL;
-    b = NULL;
-    if (ac < 2)
-        print_error(&a, &b, NULL);
-    args = split_args(&av[1], ac);
-    init_stack(&a, args);
-    printf("Stack A\n\n");
-    for (t_stack *node = a; node; node = node->next)
-        printf("%d\n", node->value);
-    printf("\n\nSTACK B\n\n");
-    for (t_stack *node = b; node; node = node->next)
-        printf("%d\n", node->value);
-    free_stack(&a);
-    free_stack(&b);
-    free_matrix(args);
+	a = NULL;
+	b = NULL;
+	if (ac < 2)
+		print_error(&a, &b, NULL);
+	args = split_args(&av[1], ac);
+	init_stack(&a, args);
+	printf("Stack A\n\n");
+	for (t_stack *node = a; node; node = node->next)
+		printf("%d\n", node->value);
+	printf("\n\nSTACK B\n\n");
+	for (t_stack *node = b; node; node = node->next)
+		printf("%d\n", node->value);
+	free_stack(&a);
+	free_stack(&b);
+	free_matrix(args);
 }

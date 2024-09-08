@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 11:48:01 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:17:56 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ t_stack	*lst_add_end(t_stack **stack, int value)
 		return (NULL);
 	new_node->next = NULL;
 	new_node->value = value;
-    if (!(*stack))
-    {
-        (*stack) = new_node;
-        return (new_node);
-    }
+	if (!(*stack))
+	{
+		(*stack) = new_node;
+		return (new_node);
+	}
 	while ((*stack)->next)
 		(*stack) = (*stack)->next;
 	(*stack)->next = new_node;
-    (*stack) = aux;
+	(*stack) = aux;
 	return (new_node);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:49:07 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 18:08:29 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:16:27 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	sa(t_stack **stack_a)
 	swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
 }
+
 void	sb(t_stack **stack_b)
 {
 	if (!*stack_b || !(*stack_b)->next)

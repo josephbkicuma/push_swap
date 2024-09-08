@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 11:52:48 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 12:00:00 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:17:50 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,28 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-void    free_arr(char **arr)
+void	free_arr(char **arr)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (arr[i])
-    {
-        free(arr[i]);
-        i++;
-    }
-    free(arr);
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
-void    free_matrix(char ***matrix)
+void	free_matrix(char ***matrix)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (matrix[i])
-    {
-        free_arr(matrix[i]);
-        i++;
-    }
-    free(matrix);
+	i = 0;
+	while (matrix[i])
+	{
+		free_arr(matrix[i]);
+		i++;
+	}
+	free(matrix);
 }
