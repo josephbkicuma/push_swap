@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 12:25:57 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 14:30:19 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:12:08 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static void	push(t_stack **icoming, t_stack **receipt)
 {
 	t_stack	*aux;
 
-	if (!*icoming)
-		return ;
 	aux = *icoming;
 	*icoming = (*icoming)->next;
 	aux->next = *receipt;
@@ -26,11 +24,15 @@ static void	push(t_stack **icoming, t_stack **receipt)
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
+	if (!*stack_b)
+		return ;
 	push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", 1);
 }
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
+	if (!*stack_a)
+		return ;
 	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);
 }
