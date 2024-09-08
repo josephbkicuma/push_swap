@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 14:44:59 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 15:17:56 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	main(int ac, char *av[])
         print_error(&a, &b, NULL);
     args = split_args(&av[1], ac);
     init_stack(&a, args);
-    pb(&a, &b);
-    pb(&a, &b);
     printf("Stack A\n\n");
     for (t_stack *node = a; node; node = node->next)
         printf("%d\n", node->value);

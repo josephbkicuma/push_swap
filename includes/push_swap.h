@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 12:40:13 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/08 14:58:51 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void				print_error(t_stack **stack_a, t_stack **stack_b,
 						char ***args);
 void				pa(t_stack **stack_a, t_stack **stack_b);
 void				pb(t_stack **stack_a, t_stack **stack_b);
+void				sa(t_stack **stack_a);
+void				sb(t_stack **stack_b);
 
 #endif
