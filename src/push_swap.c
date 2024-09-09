@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 18:18:09 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:09:25 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(int ac, char *av[])
 		print_error(&a, &b, NULL);
 	args = split_args(&av[1], ac);
 	init_stack(&a, args);
+    verify_stack_order(a);
+	verify_duplicated_numbers(a);
 	printf("Stack A\n\n");
 	for (t_stack *node = a; node; node = node->next)
 		printf("%d\n", node->value);
@@ -34,5 +36,4 @@ int	main(int ac, char *av[])
 		printf("%d\n", node->value);
 	free_stack(&a);
 	free_stack(&b);
-	free_matrix(args);
 }

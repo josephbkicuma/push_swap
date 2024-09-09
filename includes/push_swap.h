@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 17:36:03 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:08:00 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void				rr(t_stack **stack_a, t_stack **stack_b);
 void				rra(t_stack **stack_a);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
+void				verify_stack_order(t_stack *stack);
+void				verify_duplicated_numbers(t_stack *stack);
 
 #endif

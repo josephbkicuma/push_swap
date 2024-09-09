@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/08 18:17:56 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/09 19:19:34 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ int	init_stack(t_stack **stack_a, char ***args)
 		}
 		i++;
 	}
+	free_matrix(args);
 	return (1);
 }
