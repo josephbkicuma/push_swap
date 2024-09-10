@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/09 20:08:00 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 02:11:38 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 typedef struct s_stack
 {
 	int				value;
+	size_t			target;
+	bool			above_mid;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -43,5 +45,11 @@ void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
 void				verify_stack_order(t_stack *stack);
 void				verify_duplicated_numbers(t_stack *stack);
+void				sort_three(t_stack **stack_a);
+// Deletar Uma das funcoes
+void				target(t_stack **stack_a, t_stack **stack_b);
+void				set_target(t_stack **stack_a, t_stack **stack_b);
+
+size_t				ft_list_size(t_stack **stack);
 
 #endif

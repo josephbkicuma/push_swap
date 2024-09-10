@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/09 20:11:10 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 00:55:27 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,19 @@ void    verify_duplicated_numbers(t_stack *stack)
         }
         stack = stack->next;
     }
+}
+
+size_t  ft_list_size(t_stack **stack)
+{
+    size_t  i;
+    t_stack *tmp;
+
+    tmp = *stack;
+    i = 0;
+    while (tmp)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    return (i);
 }
