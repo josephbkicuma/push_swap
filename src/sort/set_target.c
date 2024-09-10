@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 01:52:06 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 12:43:25 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:36:16 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	set_target(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp_a;
 
+	set_stack_index(stack_a, stack_b);
 	temp_a = *stack_a;
 	while (temp_a)
 	{

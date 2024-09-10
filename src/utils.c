@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 12:41:47 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:13:32 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,27 @@ void	set_above_midle(t_stack **stack_a)
 		aux = aux->next;
         stack_index++;
 	}
+}
+
+void    set_stack_index(t_stack **stack_a, t_stack **stack_b)
+{
+    size_t  index;
+    t_stack *aux;
+
+    aux = *stack_a;
+    index = 0;
+    while (aux)
+    {
+        aux->index = index;
+        index++;
+        aux = aux->next;
+    }
+    aux = *stack_b;
+    index = 0;
+    while (aux)
+    {
+        aux->index = index;
+        index++;
+        aux = aux->next;
+    }    
 }
