@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 12:33:52 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:47:31 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,10 @@ void				rrr(t_stack **stack_a, t_stack **stack_b);
 void				verify_stack_order(t_stack *stack);
 void				verify_duplicated_numbers(t_stack *stack);
 void				sort_three(t_stack **stack_a);
-// Deletar Uma das funcoes
 void				set_above_midle(t_stack **stack_a);
-void				target(t_stack **stack_a, t_stack **stack_b);
 void				set_target(t_stack **stack_a, t_stack **stack_b);
-
 size_t				ft_list_size(t_stack **stack);
+// DELETAR ESSA FUNCAO
+void				target(t_stack **stack_a, t_stack **stack_b);
 
 #endif
