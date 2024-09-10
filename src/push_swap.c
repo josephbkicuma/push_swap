@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 03:09:52 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:43:36 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char *av[])
 	set_target(&a, &b);
 	printf("Stack A\n\n");
 	for (t_stack *node = a; node; node = node->next)
-		printf("valuer: %d || target: %ld\n", node->value, node->target);
+		printf("valuer: %d || target: %ld || Above MID: %d\n", node->value, node->target, node->above_mid);
 	printf("\n\nSTACK B\n\n");
 	for (t_stack *node = b; node; node = node->next)
 		printf("%d\n", node->value);
