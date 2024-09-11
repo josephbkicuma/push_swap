@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 14:13:33 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:32:04 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				cost;
+	int				un_cost;
 	size_t			target;
 	size_t			index;
 	bool			above_mid;
@@ -53,6 +54,9 @@ void				set_target(t_stack **stack_a, t_stack **stack_b);
 void				set_stack_index(t_stack **stack_a, t_stack **stack_b);
 size_t				ft_list_size(t_stack **stack);
 void				calculate_coast(t_stack **stack_a, t_stack **stack_b);
+t_stack				*get_cheapest(t_stack **stack_a, t_stack **stack_b);
+t_stack				*get_target_adress(size_t index_target, t_stack **stack_b);
+void				sort_until_three(t_stack **stack_a, t_stack **stack_b);
 // DELETAR ESSA FUNCAO
 void				target(t_stack **stack_a, t_stack **stack_b);
 

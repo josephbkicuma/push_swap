@@ -6,13 +6,13 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 13:02:13 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 17:22:32 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:34:32 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static t_stack	*get_target_adress(size_t index_target, t_stack **stack_b)
+t_stack	*get_target_adress(size_t index_target, t_stack **stack_b)
 {
 	t_stack	*aux;
 
@@ -65,6 +65,23 @@ static void	set_cost(t_stack **stack_a, t_stack **stack_b, int stack_a_size,
 		aux->cost = target_node->index + set_cost_below(&aux, stack_a_size);
 }
 
+void	set_each_stack_cost(t_stack **stack)
+{
+	t_stack	*aux;
+	int		stack_size;
+
+	aux = *stack;
+	stack_size = ft_list_size(stack);
+	while (aux)
+	{
+		if (aux->above_mid)
+			aux->un_cost = aux->index;
+		else
+			aux->un_cost = stack_size - aux->index;
+		aux = aux->next;
+	}
+}
+
 void	calculate_coast(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*aux;
@@ -74,9 +91,28 @@ void	calculate_coast(t_stack **stack_a, t_stack **stack_b)
 	aux = *stack_a;
 	stack_a_size = ft_list_size(stack_a);
 	stack_b_size = ft_list_size(stack_b);
+	set_each_stack_cost(stack_a);
+	set_each_stack_cost(stack_b);
 	while (aux)
 	{
 		set_cost(&aux, stack_b, stack_a_size, stack_b_size);
 		aux = aux->next;
 	}
+}
+
+t_stack	*get_cheapest(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*aux;
+	t_stack	*cheapest;
+	
+	cheapest = *stack_a;
+	aux = *stack_a;
+	calculate_coast(stack_a, stack_b);
+	while (aux)
+	{
+		if (cheapest->cost > aux->cost)
+			cheapest = aux;
+		aux = aux->next;
+	}
+	return (cheapest);
 }
