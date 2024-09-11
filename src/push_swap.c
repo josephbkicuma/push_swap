@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 19:09:10 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:45:29 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	***split_args(char **av, int ac);
 
-int	main(int ac, char *av1[])
+int	main(int ac, char *av[])
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -22,12 +22,9 @@ int	main(int ac, char *av1[])
 
 	a = NULL;
 	b = NULL;
-	char	*av[] = {"5 2 7 1 6 3 9 4 8", NULL};
-	ac = 10;
-	(void)av1;
 	if (ac < 2)
 		print_error(&a, &b, NULL);
-	args = split_args(&av[0], ac);
+	args = split_args(&av[1], ac);
 	init_stack(&a, args);
 	verify_stack_order(a);
 	verify_duplicated_numbers(a);
