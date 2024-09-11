@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 01:52:06 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 13:40:50 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 17:42:43 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ static size_t	found_index(int value, t_stack **stack_b)
 	is_smallest = true;
 	while (aux)
 	{
-		if (value > aux->value && (aux->value - value) < num_target_atual)
+		if (value > aux->value && (value - aux->value) < num_target_atual)
 		{
 			target_index = (size_t)i;
-			num_target_atual = aux->value;
+			num_target_atual = value - aux->value;
 			is_smallest = false;
 		}
 		aux = aux->next;
@@ -75,7 +75,7 @@ void	set_target(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp_a;
 
-	set_stack_index(stack_a, stack_b);
+	set_stack_index(stack_a, stack_b); //certo
 	set_above_midle(stack_a);
 	set_above_midle(stack_b);
 	temp_a = *stack_a;
