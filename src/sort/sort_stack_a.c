@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 17:59:47 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 19:38:53 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:36:28 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,23 @@ void    put_on_top(t_stack **stack_a, t_stack *value)
     }
 }
 
+void	rotate_until_ordenate(t_stack **stack)
+{
+	t_stack	*aux;
+	t_stack	*value;
+
+	aux = *stack;
+	value = aux;
+	while (aux->next)
+	{
+		if (aux->value > aux->next->value)
+			value = aux->next;
+		aux = aux->next;
+	}
+	set_target(stack, stack);
+	put_on_top(stack, value);
+}
+
 void    push_stack_a_order(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *aux_b;
@@ -91,4 +108,5 @@ void    push_stack_a_order(t_stack **stack_a, t_stack **stack_b)
         aux_b = aux_b->next;
         pa(stack_a, stack_b);
     }
+	rotate_until_ordenate(stack_a);
 }
