@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 16:49:05 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:09:10 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ int	main(int ac, char *av1[])
 	init_stack(&a, args);
 	verify_stack_order(a);
 	verify_duplicated_numbers(a);
-	// sort_three(&a);
 	pb(&a, &b);
 	pb(&a, &b);
-	set_target(&a, &b);
-	calculate_coast(&a, &b);
 	sort_until_three(&a, &b);
+	sort_three(&a);
+	push_stack_a_order(&a, &b);
 	printf("Stack A\n\n");
 	for (t_stack *node = a; node; node = node->next)
 		printf("%ld - valuer: %d || target: %ld || Above MID: %d || COST: %d || UNI: %d\n", node->index,
@@ -44,8 +43,6 @@ int	main(int ac, char *av1[])
 	printf("\n\nSTACK B\n\n");
 	for (t_stack *node = b; node; node = node->next)
 		printf("%ld - %d | ABOVE MID: %d || Cost: %d || UN: %d\n", node->index, node->value, node->above_mid, node->cost, node->un_cost);
-	t_stack *cheapest = get_cheapest(&a, &b);
-	printf("\n\nBarato: VALUE: %d || COST: %d\n", cheapest->value, cheapest->cost);
 	free_stack(&a);
 	free_stack(&b);
 }

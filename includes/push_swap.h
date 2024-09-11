@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 10:32:04 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:08:20 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void				calculate_coast(t_stack **stack_a, t_stack **stack_b);
 t_stack				*get_cheapest(t_stack **stack_a, t_stack **stack_b);
 t_stack				*get_target_adress(size_t index_target, t_stack **stack_b);
 void				sort_until_three(t_stack **stack_a, t_stack **stack_b);
-// DELETAR ESSA FUNCAO
-void				target(t_stack **stack_a, t_stack **stack_b);
+t_stack				*found_bigger_closest(t_stack **stack_a, t_stack **stack_b);
+void				push_stack_a_order(t_stack **stack_a, t_stack **stack_b);
 
 #endif
