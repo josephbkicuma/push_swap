@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 13:02:13 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 10:34:32 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:23:42 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,21 +98,4 @@ void	calculate_coast(t_stack **stack_a, t_stack **stack_b)
 		set_cost(&aux, stack_b, stack_a_size, stack_b_size);
 		aux = aux->next;
 	}
-}
-
-t_stack	*get_cheapest(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*aux;
-	t_stack	*cheapest;
-	
-	cheapest = *stack_a;
-	aux = *stack_a;
-	calculate_coast(stack_a, stack_b);
-	while (aux)
-	{
-		if (cheapest->cost > aux->cost)
-			cheapest = aux;
-		aux = aux->next;
-	}
-	return (cheapest);
 }
