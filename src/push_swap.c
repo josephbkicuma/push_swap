@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/12 17:16:44 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 22:38:21 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char *av[])
 
 	a = NULL;
 	b = NULL;
+	if (ac == 1)
+		return (0);
 	if (ac < 2)
 		print_error(&a, &b, NULL);
 	if (!av[1][0])

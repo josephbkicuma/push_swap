@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/12 17:12:59 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 22:40:53 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ static bool	is_all_int(const char *str)
 			return (false);
 		if (str[i] == '+' || str[i] == '-')
 		{
-			if (!str[++i])
+			if (!str[i + 1])
 				return (false);
-			else if (!(ft_isdigit(str[++i])))
+			else if (!(ft_isdigit(str[i + 1])))
 				return (false);
 		}
 		i++;
@@ -89,7 +89,7 @@ int	init_stack(t_stack **stack_a, char ***args)
 			if (!is_all_int(args[i][j]))
 				print_error(stack_a, NULL, args);
 			num = ft_atol(args[i][j]);
-			if (num >= INT_MAX || num <= INT_MIN)
+			if (num > INT_MAX || num < INT_MIN)
 				print_error(stack_a, NULL, args);
 			if (!lst_add_end(stack_a, num))
 				print_error(stack_a, NULL, args);
