@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 20:30:28 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/12 15:35:32 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 23:00:46 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ void	sort_three(t_stack **stack_a)
 
 void	sort_four(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack	*aux;
+
+	aux = *stack_a;
+	if (aux->next)
+	{
+		while (aux->next && aux->value < aux->next->value)
+			aux = aux->next;
+		if (aux->next == NULL)
+			return ;
+	}
 	pb(stack_a, stack_b);
 	sort_three(stack_a);
 	push_stack_a_order(stack_a, stack_b);
