@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 01:52:06 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 17:42:43 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:27:00 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	found_bigger_index(t_stack **stack_a)
 		if (is_biggest_num(aux->value, temp))
 			return (bigger_index);
 		aux = aux->next;
-        bigger_index++;
+		bigger_index++;
 	}
 	return (-1);
 }
@@ -75,7 +75,7 @@ void	set_target(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp_a;
 
-	set_stack_index(stack_a, stack_b); //certo
+	set_stack_index(stack_a, stack_b);
 	set_above_midle(stack_a);
 	set_above_midle(stack_b);
 	temp_a = *stack_a;
