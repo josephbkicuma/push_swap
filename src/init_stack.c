@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/09 19:19:34 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:25:03 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ int	init_stack(t_stack **stack_a, char ***args)
 		while (args[i][j])
 		{
 			if (!is_all_int(args[i][j]))
-				return (0);
+				print_error(stack_a, NULL, args);
 			num = ft_atol(args[i][j]);
 			if (num >= INT_MAX || num <= INT_MIN)
-				return (0);
+				print_error(stack_a, NULL, args);
 			if (!lst_add_end(stack_a, num))
-				return (0);
+				print_error(stack_a, NULL, args);
 			j++;
 		}
 		i++;
