@@ -6,13 +6,13 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/12 13:13:29 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:37:28 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	verify_stack_order(t_stack *stack)
+void	verify_stack_order(t_stack *stack, t_stack *b)
 {
 	t_stack	*aux;
 
@@ -28,6 +28,8 @@ void	verify_stack_order(t_stack *stack)
 	}
 	else if (ft_list_size(&aux) == 3)
 		sort_three(&aux);
+	else if (ft_list_size(&aux) == 4)
+		sort_four(&aux, &b);
 	while (stack->next)
 	{
 		if (stack->value < stack->next->value)

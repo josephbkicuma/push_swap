@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 20:30:28 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/09 21:40:17 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:35:32 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,11 @@ void	sort_three(t_stack **stack_a)
 		sa(stack_a);
 		ra(stack_a);
 	}
+}
+
+void	sort_four(t_stack **stack_a, t_stack **stack_b)
+{
+	pb(stack_a, stack_b);
+	sort_three(stack_a);
+	push_stack_a_order(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/12 13:16:47 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:23:58 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ int	main(int ac, char *av[])
 	b = NULL;
 	if (ac < 2)
 		print_error(&a, &b, NULL);
+	if (!av[1][0])
+		print_error(NULL, NULL, NULL);
 	args = split_args(&av[1], ac);
 	init_stack(&a, args);
-	verify_stack_order(a);
+	verify_stack_order(a, b);
 	verify_duplicated_numbers(a);
 	pb(&a, &b);
 	pb(&a, &b);
