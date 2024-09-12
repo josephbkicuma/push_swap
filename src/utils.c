@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/10 13:13:32 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:13:29 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@ void	verify_stack_order(t_stack *stack)
 	t_stack	*aux;
 
 	aux = stack;
+	if (ft_list_size(&aux) == 2)
+	{
+		if (aux->value > aux->next->value)
+		{
+			sa(&aux);
+			free_stack(&aux);
+			exit(EXIT_SUCCESS);
+		}
+	}
+	else if (ft_list_size(&aux) == 3)
+		sort_three(&aux);
 	while (stack->next)
 	{
 		if (stack->value < stack->next->value)
@@ -78,29 +89,29 @@ void	set_above_midle(t_stack **stack_a)
 		else
 			aux->above_mid = false;
 		aux = aux->next;
-        stack_index++;
+		stack_index++;
 	}
 }
 
-void    set_stack_index(t_stack **stack_a, t_stack **stack_b)
+void	set_stack_index(t_stack **stack_a, t_stack **stack_b)
 {
-    size_t  index;
-    t_stack *aux;
+	size_t	index;
+	t_stack	*aux;
 
-    aux = *stack_a;
-    index = 0;
-    while (aux)
-    {
-        aux->index = index;
-        index++;
-        aux = aux->next;
-    }
-    aux = *stack_b;
-    index = 0;
-    while (aux)
-    {
-        aux->index = index;
-        index++;
-        aux = aux->next;
-    }    
+	aux = *stack_a;
+	index = 0;
+	while (aux)
+	{
+		aux->index = index;
+		index++;
+		aux = aux->next;
+	}
+	aux = *stack_b;
+	index = 0;
+	while (aux)
+	{
+		aux->index = index;
+		index++;
+		aux = aux->next;
+	}
 }

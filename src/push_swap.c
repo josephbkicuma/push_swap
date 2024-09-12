@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/11 20:48:18 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:16:47 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	main(int ac, char *av[])
 			node->value, node->target, node->above_mid, node->cost, node->un_cost);
 	printf("\n\nSTACK B\n\n");
 	for (t_stack *node = b; node; node = node->next)
-		printf("%ld - %d | ABOVE MID: %d || Cost: %d || UN: %d\n", node->index, node->value, node->above_mid, node->cost, node->un_cost);*/
+		printf("%ld - %d | ABOVE MID: %d || Cost: %d || UN: %d\n"
+		, node->index, node->value, node->above_mid, node->cost, node->un_cost);*/
 	free_stack(&a);
 	free_stack(&b);
 }
