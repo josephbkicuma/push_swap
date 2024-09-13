@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/13 00:53:00 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:28:44 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	verify_stack_order(t_stack *stack, t_stack *b)
 		sort_three(&aux);
 	else if (ft_list_size(&aux) == 4)
 		sort_four(&aux, &b);
+	else if (ft_list_size(&aux) == 5)
+		sort_five(&aux, &b);
 	while (stack->next)
 	{
 		if (stack->value < stack->next->value)

@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:13:33 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/13 00:53:08 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:34:19 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void				find_best_target_for_a(t_stack *tmp_a, t_stack **stack_b,
 						size_t stack_size);
 void				update_target_and_mid(t_stack *tmp_a, size_t i,
 						size_t stack_size);
+void				sort_five(t_stack **stack_a, t_stack **stack_b);
 
 #endif
