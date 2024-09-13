@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/13 13:28:44 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:45:29 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	verify_stack_order(t_stack *stack, t_stack *b)
 		if (aux->value > aux->next->value)
 		{
 			sa(&aux);
-			free_stack(&aux);
-			exit(EXIT_SUCCESS);
+			free_exit_sucess(&aux);
 		}
 	}
 	else if (ft_list_size(&aux) == 3)
@@ -39,8 +38,7 @@ void	verify_stack_order(t_stack *stack, t_stack *b)
 		else
 			return ;
 	}
-	free_stack(&aux);
-	exit(EXIT_SUCCESS);
+	free_exit_sucess(&aux);
 }
 
 void	verify_duplicated_numbers(t_stack *stack)
