@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:28:15 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 14:23:23 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/14 14:43:40 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				pa(t_stack **stack_a, t_stack **stack_b);
 void				pb(t_stack **stack_a, t_stack **stack_b);
 void				sa(t_stack **stack_a);
 void				sb(t_stack **stack_b);
+void				ss(t_stack **stack_a, t_stack **stack_b);
 void				ra(t_stack **stack_a);
 void				rb(t_stack **stack_b);
 void				rr(t_stack **stack_a, t_stack **stack_b);
@@ -65,5 +66,8 @@ int					ft_isdigit(int i);
 void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *str, char c);
 char				*get_next_line(int fd);
+int					ft_strcmp(char *s1, char *s2);
+void				execute_order_on_stack(t_stack **stack_a,
+						t_stack **stack_b);
 
 #endif

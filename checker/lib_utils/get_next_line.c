@@ -1,58 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 11:52:48 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 15:01:37 by jquicuma         ###   ########.fr       */
+/*   Created: 2024/09/14 14:05:58 by jquicuma          #+#    #+#             */
+/*   Updated: 2024/09/14 14:49:13 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void	free_stack(t_stack **stack)
+char	*get_next_line(int fd)
 {
-	t_stack	*tmp;
+	int 	i = 0;
+	int	byte;
+	char	*str_buf;
+	char	c;
 
-	while (*stack)
+	str_buf = (char*)malloc(42000000);
+	byte = read(fd, &c, 1);
+
+	while (byte > 0)
 	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		free(tmp);
-	}
-}
-
-void	free_arr(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
+		str_buf[i] = c;
 		i++;
+		if (c == EOF || c == '\n')
+			break ;
+		byte = read(fd, &c, 1);
 	}
-	free(arr);
-}
 
-void	free_matrix(char ***matrix)
-{
-	int	i;
-
-	i = 0;
-	while (matrix[i])
+	if (i == 0 || byte < 0)
 	{
-		free_arr(matrix[i]);
-		i++;
+		free(str_buf);
+		return (NULL);
 	}
-	free(matrix);
-}
-
-void	free_exit_sucess(t_stack **stack)
-{
-	ft_putstr_fd("OK\n", 1);
-	free_stack(stack);
-	exit(EXIT_SUCCESS);
+	str_buf[i] = '\0';
+	return (str_buf);
 }
