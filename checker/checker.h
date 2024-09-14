@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:28:15 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 13:55:14 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/14 14:23:23 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 typedef struct s_stack
 {
@@ -61,5 +64,6 @@ long				ft_atol(const char *str);
 int					ft_isdigit(int i);
 void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *str, char c);
+char				*get_next_line(int fd);
 
 #endif

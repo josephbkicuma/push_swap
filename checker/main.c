@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:27:40 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 13:56:57 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/14 14:25:10 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int ac, char *av[])
 	init_stack(&a, args);
 	verify_duplicated_numbers(a);
 	verify_stack_order(a, b);
+	printf("%s\n\n", get_next_line(0));
 	printf("STACK_A\n");
 	for (t_stack *node = a; node; node = node->next)
 		printf("VALUE: %d\n", node->value);
