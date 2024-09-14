@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 14:05:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 14:49:13 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:58:19 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*get_next_line(int fd)
 {
-	int 	i = 0;
-	int	byte;
+	int		i;
+	int		byte;
 	char	*str_buf;
 	char	c;
 
-	str_buf = (char*)malloc(42000000);
+	i = 0;
+	str_buf = (char *)malloc(42000000);
 	byte = read(fd, &c, 1);
-
 	while (byte > 0)
 	{
 		str_buf[i] = c;
@@ -30,7 +30,6 @@ char	*get_next_line(int fd)
 			break ;
 		byte = read(fd, &c, 1);
 	}
-
 	if (i == 0 || byte < 0)
 	{
 		free(str_buf);
