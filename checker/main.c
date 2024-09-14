@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 13:35:24 by jquicuma         ###   ########.fr       */
+/*   Created: 2024/09/14 13:27:40 by jquicuma          #+#    #+#             */
+/*   Updated: 2024/09/14 13:56:57 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "checker.h"
 
 int	main(int ac, char *av[])
 {
@@ -30,11 +30,9 @@ int	main(int ac, char *av[])
 	init_stack(&a, args);
 	verify_duplicated_numbers(a);
 	verify_stack_order(a, b);
-	pb(&a, &b);
-	pb(&a, &b);
-	sort_until_three(&a, &b);
-	sort_three(&a);
-	push_stack_a_order(&a, &b);
-	free_stack(&a);
+	printf("STACK_A\n");
+	for (t_stack *node = a; node; node = node->next)
+		printf("VALUE: %d\n", node->value);
 	free_stack(&b);
+    free_stack(&a);
 }
