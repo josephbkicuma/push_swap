@@ -6,11 +6,48 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:27:53 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/14 13:35:24 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/15 11:01:24 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static void	verify_order(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->value < stack->next->value)
+			stack = stack->next;
+		else
+			return ;
+	}
+}
+
+void	verify_stack_order(t_stack *stack, t_stack *b)
+{
+	t_stack	*aux;
+
+	aux = stack;
+	if (ft_list_size(&aux) == 2)
+	{
+		if (aux->value > aux->next->value)
+		{
+			sa(&aux);
+			free_exit_sucess(&aux);
+		}
+	}
+	else if (ft_list_size(&aux) == 3)
+		sort_three(&aux);
+	else if (ft_list_size(&aux) == 4)
+		sort_four(&aux, &b);
+	else if (ft_list_size(&aux) == 5)
+		sort_five(&aux, &b);
+	if (stack != NULL)
+	{
+		verify_order(stack);
+	}
+	free_exit_sucess(&aux);
+}
 
 int	main(int ac, char *av[])
 {
