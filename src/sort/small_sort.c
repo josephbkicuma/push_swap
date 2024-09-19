@@ -75,3 +75,26 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	sort_three(stack_a);
 	push_stack_a_order(stack_a, stack_b);
 }
+
+void	small_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*aux;
+	t_stack	*b;
+
+	aux = *stack_a;
+	b = *stack_b;
+	if (ft_list_size(&aux) == 2)
+	{
+		if (aux->value > aux->next->value)
+		{
+			sa(&aux);
+			free_exit_sucess(&aux);
+		}
+	}
+	else if (ft_list_size(&aux) == 3)
+		sort_three(&aux);
+	else if (ft_list_size(&aux) == 4)
+		sort_four(&aux, &b);
+	else if (ft_list_size(&aux) == 5)
+		sort_five(&aux, &b);
+}

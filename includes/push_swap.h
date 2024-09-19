@@ -67,5 +67,6 @@ void				update_target_and_mid(t_stack *tmp_a, size_t i,
 void				sort_five(t_stack **stack_a, t_stack **stack_b);
 void				free_exit_sucess(t_stack **stack);
 char				***split_args(char **av, int ac);
+void				small_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

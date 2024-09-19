@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/15 10:41:42 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 00:05:33 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ static bool	is_all_int(const char *str)
 			if (!str[i + 1])
 				return (false);
 			else if (!(ft_isdigit(str[i + 1])))
+				return (false);
+			//if (i > 0)
+			if (str[i - 1])
 				return (false);
 		}
 		i++;

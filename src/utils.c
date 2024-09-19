@@ -6,11 +6,29 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:02:58 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/15 11:01:01 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:45:29 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	verify_stack_order(t_stack *stack, t_stack *b)
+{
+	t_stack	*aux;
+
+	aux = stack;
+	if (!aux)
+		print_error(&stack, &b, NULL);
+	small_sort(&stack, &b);
+	while (stack->next)
+	{
+		if (stack->value < stack->next->value)
+			stack = stack->next;
+		else
+			return ;
+	}
+	free_exit_sucess(&aux);
+}
 
 void	verify_duplicated_numbers(t_stack *stack)
 {
