@@ -1,3 +1,4 @@
+#!/bin/bash
 while true; do 
     var=($(seq -100000 10000 | shuf -n 100 | tr '\n' ' ')); 
     clear; 
