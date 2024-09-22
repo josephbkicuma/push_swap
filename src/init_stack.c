@@ -6,7 +6,7 @@
 /*   By: jquicuma <jquicuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:31:26 by jquicuma          #+#    #+#             */
-/*   Updated: 2024/09/22 06:58:35 by jquicuma         ###   ########.fr       */
+/*   Updated: 2024/09/13 00:05:33 by jquicuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,36 +53,6 @@ t_stack	*lst_add_end(t_stack **stack, int value)
 	return (new_node);
 }
 
-
-static bool is_all_int(const char *str)
-{
-    int i = 0;
-
-    // Verifica se a string está vazia
-    if (!str || str[0] == '\0')
-        return false;
-
-    // Permite que o primeiro caractere seja '+' ou '-' ou um dígito
-    if (str[i] == '+' || str[i] == '-')
-        i++;
-
-    // Verifica se ainda há caracteres após o sinal
-    if (str[i] == '\0')
-        return false;
-
-    // Verifica se todos os caracteres restantes são dígitos
-    while (str[i])
-    {
-        if (!ft_isdigit(str[i]))
-            return false;
-        i++;
-    }
-
-    return true;
-}
-
-
-/*
 static bool	is_all_int(const char *str)
 {
 	int	i;
@@ -98,7 +68,6 @@ static bool	is_all_int(const char *str)
 				return (false);
 			else if (!(ft_isdigit(str[i + 1])))
 				return (false);
-			//if (i > 0)
 			if (str[i - 1])
 				return (false);
 		}
@@ -106,7 +75,6 @@ static bool	is_all_int(const char *str)
 	}
 	return (true);
 }
-*/
 
 int	init_stack(t_stack **stack_a, char ***args)
 {

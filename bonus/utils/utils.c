@@ -18,8 +18,6 @@ void	verify_stack_order(t_stack *stack, t_stack *b)
 
 	aux = stack;
 	(void)b;
-	if (!aux)
-		print_error(&aux, &b, NULL);
 	if (ft_list_size(&aux) == 2)
 	{
 		if (aux->value > aux->next->value)

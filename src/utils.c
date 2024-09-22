@@ -17,9 +17,20 @@ void	verify_stack_order(t_stack *stack, t_stack *b)
 	t_stack	*aux;
 
 	aux = stack;
-	if (!aux)
-		print_error(&stack, &b, NULL);
-	small_sort(&stack, &b);
+	if (ft_list_size(&aux) == 2)
+	{
+		if (aux->value > aux->next->value)
+		{
+			sa(&aux);
+			free_exit_sucess(&aux);
+		}
+	}
+	else if (ft_list_size(&aux) == 3)
+		sort_three(&aux);
+	else if (ft_list_size(&aux) == 4)
+		sort_four(&aux, &b);
+	else if (ft_list_size(&aux) == 5)
+		sort_five(&aux, &b);
 	while (stack->next)
 	{
 		if (stack->value < stack->next->value)
