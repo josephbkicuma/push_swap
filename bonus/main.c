@@ -17,6 +17,7 @@ int	main(int ac, char *av[])
 	t_stack	*a;
 	t_stack	*b;
 	char	***args;
+	t_stack	*aux;
 
 	a = NULL;
 	b = NULL;
@@ -28,6 +29,9 @@ int	main(int ac, char *av[])
 		print_error(NULL, NULL, NULL);
 	args = split_args(&av[1], ac);
 	init_stack(&a, args);
+	aux = a;
+	if (aux == NULL)
+		print_error(&a, &b, args);
 	verify_duplicated_numbers(a);
 	execute_order_on_stack(&a, &b);
 	verify_stack_order(a, b);

@@ -58,19 +58,16 @@ static bool	is_all_int(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str || str[0] == '\0')
+		return (false);
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (str[i] == '\0')
+		return (false);
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) && str[i] != '+' && str[i] != '-')
+		if (!ft_isdigit(str[i]))
 			return (false);
-		if (str[i] == '+' || str[i] == '-')
-		{
-			if (!str[i + 1])
-				return (false);
-			else if (!(ft_isdigit(str[i + 1])))
-				return (false);
-			if (str[i - 1])
-				return (false);
-		}
 		i++;
 	}
 	return (true);

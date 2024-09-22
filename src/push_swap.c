@@ -12,10 +12,20 @@
 
 #include "../includes/push_swap.h"
 
+static void	full_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	sort_until_three(stack_a, stack_b);
+	sort_three(stack_a);
+	push_stack_a_order(stack_a, stack_b);
+}
+
 int	main(int ac, char *av[])
 {
 	t_stack	*a;
 	t_stack	*b;
+	t_stack	*aux;
 	char	***args;
 
 	a = NULL;
@@ -28,13 +38,12 @@ int	main(int ac, char *av[])
 		print_error(NULL, NULL, NULL);
 	args = split_args(&av[1], ac);
 	init_stack(&a, args);
+	aux = a;
+	if (aux == NULL)
+		print_error(&a, &b, NULL);
 	verify_duplicated_numbers(a);
 	verify_stack_order(a, b);
-	pb(&a, &b);
-	pb(&a, &b);
-	sort_until_three(&a, &b);
-	sort_three(&a);
-	push_stack_a_order(&a, &b);
+	full_sort(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
 }
